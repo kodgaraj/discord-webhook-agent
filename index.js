@@ -9,7 +9,12 @@ if (!process.env.DISCORD_WEBHOOK_URL) {
 }
 
 // Getting the arguments from name "appName"
-const appName = process.argv[2];
+let appName = process.argv[2];
+
+if (!appName) {
+  console.log("App name is not provided!");
+  appName = "Uygulama";
+}
 
 // moment locale set
 moment.locale("tr");
